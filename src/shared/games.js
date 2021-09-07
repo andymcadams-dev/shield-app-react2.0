@@ -11,7 +11,7 @@ export const GAMES = [
     },
     {
         id: 1,
-        name: "University of La Verne",
+        school: "University of La Verne",
         image: "/assets/LaVerneLogo.png",
         featured: false,
         date: "9/18/21 (SAT) 12:30pm",
@@ -21,7 +21,7 @@ export const GAMES = [
     },
     {
         id: 2,
-        name: "George Fox University",
+        school: "George Fox University",
         image: "/assets/GeorgeFoxLogo.png",
         featured: false,
         date: "9/18/21 (SAT) 12:30pm",
@@ -31,17 +31,17 @@ export const GAMES = [
     },
     {
         id: 3,
-        name: "Lewis & Clark University",
+        school: "Lewis & Clark University",
         image: "/assets/LewisNClarkLogo.png",
         featured: true,
-        date: "10/9/21 (SAT) 1pm",
+        date: "10-9-21 (SAT) 1pm",
         score: "N/A",
         winloss: "N/A",
         teamgrade: "N/A"
     },
     {
         id: 4,
-        name: "Whitworth University",
+        school: "Whitworth University",
         image: "/assets/WhitworthLogo.png",
         featured: true,
         date: "10/16/21 (SAT) TBA",
@@ -51,7 +51,7 @@ export const GAMES = [
     },
     {
         id: 5,
-        name: "Linfield University",
+        school: "Linfield University",
         image: "/assets/LinfieldLogo.png",
         featured: true,
         date: "10/23/21 (SAT) TBA",
@@ -61,7 +61,7 @@ export const GAMES = [
     },
     {
         id: 6,
-        name: "Willamette University",
+        school: "Willamette University",
         image: "/assets/WillametteLogo.png",
         featured: true,
         date: "10/30/21 (SAT) TBA",
@@ -71,7 +71,7 @@ export const GAMES = [
     },
     {
         id: 7,
-        name: "UNiversity of Puget Sound",
+        school: "UNiversity of Puget Sound",
         image: "/assets/PugetSoundLogo.png",
         featured: true,
         date: "11/6/21 (SAT) 1pm",
@@ -81,7 +81,7 @@ export const GAMES = [
     },
     {
         id: 8,
-        name: "Pacific University",
+        school: "Pacific University",
         image: "/assets/PacificLogo.png",
         featured: true,
         date: "11/13/21 (SAT) TBA",
