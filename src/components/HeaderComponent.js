@@ -26,7 +26,12 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
+                                <img src="/assets/plu-logo.png" height="150" width="300"/>
+                            </div>
+                            <div className="col">
                                 <h1>S.H.I.E.L.D.</h1>
+                            </div>
+                            <div className="col">
                                 <h2>Defend Stronger</h2>
                             </div>
                         </div>
@@ -34,8 +39,8 @@ class Header extends Component {
                 </Jumbotron>
                 <Navbar dark sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/plu-logo.png"
-                        height="30" width="30" alt="PLU Logo" /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src="/assets/plu-logo.png"
+                        height="90" width="120" alt="PLU Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

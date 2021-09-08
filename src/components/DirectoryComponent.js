@@ -1,17 +1,23 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardBody, CardText, CardTitle, Breadcrumb, BreadcrumbItem, ListGroup, ListGroupItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem({game}) {
     return (
-        <Card>
-                        <Link to={`/directory/${game.id}`}>
-                        <CardImg width="100%" src={game.image} alt={game.school} />
-                        <CardImgOverlay>
-                            <CardTitle>{game.school}</CardTitle>
-                        </CardImgOverlay>
-                        </Link>
-                    </Card>
+       
+                    <Card border="dark" style={{width: '18rem'}}>
+                    <Link to={'/directory/${game.school}'}></Link>
+                <CardImg top src={game.image} alt={game.school} height="240" width="360" />
+                <CardBody>
+                <CardTitle>{game.school}</CardTitle>
+                    <CardText>{game.date}</CardText>
+                    <ListGroup className="list-group-flush">
+                        <ListGroupItem>{game.winloss}</ListGroupItem>
+                        <ListGroupItem>{game.score}</ListGroupItem>
+                        <ListGroupItem>{game.teamgrade}</ListGroupItem>
+                    </ListGroup>
+                </CardBody>
+            </Card>     
     )
 }
 
