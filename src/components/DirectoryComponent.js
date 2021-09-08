@@ -1,33 +1,30 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardText, CardTitle, Breadcrumb, BreadcrumbItem, ListGroup, ListGroupItem} from 'reactstrap';
+import { Card, CardImg, CardBody, CardText, CardTitle, Breadcrumb, BreadcrumbItem, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem({game}) {
     return (
-       
-                    <Card border="dark" style={{width: '18rem'}}>
-                    <Link to={'/directory/${game.school}'}></Link>
-                <CardImg top src={game.image} alt={game.school} height="240" width="360" />
-                <CardBody>
-                <CardTitle>{game.school}</CardTitle>
-                    <CardText>{game.date}</CardText>
-                    <ListGroup className="list-group-flush">
-                        <ListGroupItem>{game.winloss}</ListGroupItem>
-                        <ListGroupItem>{game.score}</ListGroupItem>
-                        <ListGroupItem>{game.teamgrade}</ListGroupItem>
-                    </ListGroup>
-                </CardBody>
-            </Card>     
+                <div style={{border: '2px solid'}}>
+                    <Card>
+                        <Link to={`/directory/${game.school}`}>
+                        <CardImg height="120" width="180" src={game.image} alt={game.school} />
+                        <CardBody>
+                            <CardTitle>{game.school}</CardTitle>
+                            <CardText>{game.date}</CardText>
+                        </CardBody>
+                        </Link>
+                    </Card>
+                </div>
     )
 }
 
-//This creates the directory component
+//This creates the directory component - also controlling the size and layout of the cards
 function Directory(props){
     const directory = props.games.map(game => {
         return (
-            <div key={game.id} className="col-md-5 m-1">
+            <Col md={2} style={{margin:"1em"}} key={game.id} >
                 <RenderDirectoryItem game={game} />
-            </div>
+            </Col>
         )
     });
 
@@ -39,6 +36,7 @@ function Directory(props){
                         <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Games</BreadcrumbItem>
                     </Breadcrumb>
+                    {/* Title of page*/}
                     <h2>Games</h2>
                     <hr />
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardTitle, CardBody, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody } from 'reactstrap';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -9,13 +9,8 @@ function RenderGame({game}) {
             <Card style={{width: '18rem'}}>
                 <CardImg top src={game.image} alt={game.school} />
                 <CardBody>
-                <CardTitle>{game.school}</CardTitle>
                     <CardText>{game.date}</CardText>
-                    <ListGroup className="list-group-flush">
-                        <ListGroupItem>{game.winloss}</ListGroupItem>
-                        <ListGroupItem>{game.score}</ListGroupItem>
-                        <ListGroupItem>{game.teamgrade}</ListGroupItem>
-                    </ListGroup>
+                    <CardText>{game.school}</CardText>
                 </CardBody>
             </Card>     
         </div>

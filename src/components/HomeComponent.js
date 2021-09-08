@@ -4,7 +4,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 function RenderCard({item}) {
     return (
         <Card>
-            <CardImg src={item.image} alt={item.school} />
+            <CardImg src={item.image} alt={item.school} width="240" height="360"/>
             <CardBody>
                 <CardTitle>{item.school}</CardTitle>
                 <CardText>{item.date}</CardText>
