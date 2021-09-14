@@ -1,58 +1,24 @@
-import React, { Component } from 'react';
-import PBU from './Checkbox';
+import { useState } from "react";
 
-const items = [
-  'PBU',
-];
+export default function PBU() {
+const [isChecked, setIsChecked] = useState(false);
 
-class PBU extends Component {
-  componentWillMount = () => {
-    this.selectedPBUCheckboxes = new Set();
-  }
+const handlePBUOnChange = () => {
+  setIsChecked(!isChecked);
+};
 
-  toggleCheckbox = label => {
-    if (this.selectedPBUCheckboxes.has(label)) {
-      this.selectedPBUCheckboxes.delete(label);
-    } else {
-      this.selectedPBUCheckboxes.add(label);
-    }
-  }
-
-  handleFormSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-
-    for (const checkbox of this.selectedPBUCheckboxes) {
-      console.log(checkbox, 'is selected.');
-    }
-  }
-
-  createCheckbox = label => (
-    <Checkbox
-            label={label}
-            handlePBUCheckboxChange={this.togglePBUCheckbox}
-            key={label}
+return (
+  <div className="PBUdiv">
+      <div className="PBU">
+        <input
+          type="checkbox"
+          id="pbu"
+          name="pbu"
+          value="PBU"
+          checked={isChecked}
+          onChange={handlePBUOnChange}
         />
-  )
-
-  createPBUCheckboxes = () => (
-    items.map(this.createPBUCheckbox)
-  )
-
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
-
-            <form onSubmit={this.handleFormSubmit}>
-              {this.createPBUCheckboxes()}
-            </form>
-
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default PBU;
+        PBU
+    </div>
+  </div>
+)}

@@ -9,7 +9,7 @@ import Home from './HomeComponent';
 import { GAMES } from '../shared/games';
 import { Switch, Route, Redirect } from 'react-router-dom';
 //import { PLAYER } from '../shared/player';
-//import { SCORECARD } from '../shared/scorecard';
+import Scorecard from './ScorecardComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -32,13 +32,7 @@ class Main extends Component {
             );
         }
     
-        const GamesWithId = ({match}) => {
-            return(
-                <GamesInfo
-                game={this.state.games.filter(game => game.id === +match.params.gameId)[0]}
-                />
-            );
-        }
+        
 
         return (
             <div>
@@ -46,7 +40,8 @@ class Main extends Component {
                     <Switch>
                         <Route path='/home' component={HomePage} />
                         <Route exact path= '/directory' render={() => <Directory games={this.state.games} />} />
-                    </Switch>
+                        <Route path='/Scorecard' component={Scorecard} />
+                        </Switch>
                     <Footer />
             </div>
         );

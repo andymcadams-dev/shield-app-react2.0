@@ -1,30 +1,58 @@
-class ForcedFumble extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: ''};
-  
-      this.handleForcedFumbleChange = this.handleForcedFumbleChange.bind(this);
-      this.handlePosGroupSubmit = this.handlePosGroupSubmit.bind(this);
-    }
-  
-    handleForcedFumbleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    render() {
-      return (
-          <form onSubmit={this.handleForcedFumbleSubmit}>
-            <select value={this.state.value} onChange={this.handlePosGroupChange} >
-                <option value="Select...">Select...</option>
-                <option value="Interior Line">Interior Line</option>
-                <option value="Defensive Ends">Defensive Ends</option>
-                <option value="Linebackers">Linebackers</option>
-                <option value="Cornerbacks">Cornerbacks</option>
-                <option value="Safeties">Safeties</option>
-            </select>
-        </form>
-      );
+import React, { Component } from 'react';
+
+
+const items = [
+  'ForcedFumble',
+];
+
+class ForFum extends Component {
+  componentWillMount = () => {
+    this.selectedForcedFumbleCheckboxes = new Set();
+  }
+
+  toggleCheckbox = label => {
+    if (this.selectedForcedFumbleCheckboxes.has(label)) {
+      this.selectedForcedFumbleCheckboxes.delete(label);
+    } else {
+      this.selectedForFumCheckboxes.add(label);
     }
   }
-  
-export default PositionGroup;
+
+  handleFormSubmit = formSubmitEvent => {
+    formSubmitEvent.preventDefault();
+
+    for (const checkbox of this.selectedForFumCheckboxes) {
+      console.log(checkbox, 'is selected.');
+    }
+  }
+
+  createCheckbox = label => (
+    <input
+            label={label}
+            handleForFumCheckboxChange={this.toggleForFumCheckbox}
+            key={label}
+        />
+  )
+
+  createForFumCheckboxes = () => (
+    items.map(this.createForFumCheckbox)
+  )
+
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+
+            <form onSubmit={this.handleFormSubmit}>
+              {this.createForFumCheckboxes()}
+            </form>
+
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ForFum;
