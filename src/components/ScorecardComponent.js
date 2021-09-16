@@ -3,11 +3,12 @@ import HudlPlay from './HudlPlayComponents/HudlPlayComponent';
 import GameSelect from './HudlPlayComponents/GameSelectComponent';
 import PlayerSelect from './PlayerComponents/PlayerComponent';
 import PositionGroupSelect from './PlayerComponents/PositionGroupComponent';
-import PBU from './StatComponents/PassBreakUpComponent';
 import PlusMinus from './PlusMinusComponents/PlusMinusComponent';
 import AlignmentGrade from './AAFComponents/AlignmentComponents';
 import AssignmentGrade from './AAFComponents/AssignmentComponent';
 import FinishGrade from './AAFComponents/FinishComponent';
+import ForcedFumble from './StatComponents/ForcedFumbleComponent';
+import PBU from './StatComponents/PassBreakUpComponent';
 
 function Scorecard () {
   const [gameSelect, setGameSelect]=useState(
@@ -64,6 +65,10 @@ function Scorecard () {
     setFinishGrade(e.target.value)
   }
 
+  const handleForcedFumbleOnChange = e => {
+    ForcedFumble(e.target.valeue)
+  }
+
   const handlePBUOnChange = e => {
     PBU(e.target.valeue)
   }
@@ -108,6 +113,11 @@ function Scorecard () {
       <FinishGrade
       finishGrade={finishGrade}
       handleFinishGradeChange={handleFinishGradeChange}
+      />
+
+      <ForcedFumble 
+      ForcedFumble={ForcedFumble}
+      handleForcedFumbleOnChange={handleForcedFumbleOnChange}
       />
 
       <PBU 
