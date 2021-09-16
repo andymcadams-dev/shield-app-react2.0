@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import GamesInfo from './GamesComponent';
 import Directory from './DirectoryComponent';
 //import Player from './PlayerComponent';
 //import Scorecard from './ScorecardComponent';
@@ -7,7 +6,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import { GAMES } from '../shared/games';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 //import { PLAYER } from '../shared/player';
 import Scorecard from './ScorecardComponent';
 
@@ -31,9 +30,6 @@ class Main extends Component {
                 />
             );
         }
-    
-        
-
         return (
             <div>
                 <Header />

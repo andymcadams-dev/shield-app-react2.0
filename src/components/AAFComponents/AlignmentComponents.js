@@ -1,21 +1,15 @@
-import React  from 'react'
+import React from 'react'
 
-const AlignmentPlusRadio = ({label, id, form, name, handleAlignmentPlusChange}) => {
-    
-    return (
-        <div>
-        <label>Plus</label>
-        <input  
-          type="radio" 
-          id={id}
-          name={name}
-          onChange={handleAlignmentPlusChange}
-          value={id}
-          checked={form[name] === id}       
-          />
-          <label htmlFor={id}>{label}</label>
-        </div>
-    )
+
+function AlignmentGrade ({alignmentGrade, handleAlignmentGradeChange}) {
+  
+  return (
+    <div>
+      <label>Alignment Grade</label>
+      <input type="text" value={alignmentGrade} onChange={handleAlignmentGradeChange} />
+    </div>
+  )
 }
 
-export default AlignmentPlusRadio;
+  
+export default AlignmentGrade;

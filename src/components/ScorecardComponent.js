@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Card, CardImg, CardText, CardBody } from 'reactstrap';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import ForcedFumble from './StatComponents/ForcedFumbleComponent'
 import HudlPlay from './HudlPlayComponents/HudlPlayComponent';
 import GameSelect from './HudlPlayComponents/GameSelectComponent';
-import AlignmentPlusRadio from './AAFComponents/AlignmentComponents';
+import PlayerSelect from './PlayerComponents/PlayerComponent';
+import PositionGroupSelect from './PlayerComponents/PositionGroupComponent';
 import PBU from './StatComponents/PassBreakUpComponent';
+import PlusMinus from './PlusMinusComponents/PlusMinusComponent';
+import AlignmentGrade from './AAFComponents/AlignmentComponents';
+import AssignmentGrade from './AAFComponents/AssignmentComponent';
+import FinishGrade from './AAFComponents/FinishComponent';
+
 function Scorecard () {
   const [gameSelect, setGameSelect]=useState(
     ''
@@ -20,16 +23,51 @@ function Scorecard () {
     setHudlPlay(e.target.value)
   }
 
-  const [alignmentPlusRadio, setAligmentPlusRadio]=useState(
+  const [positionGroupSelect, setPositionGroupSelect]=useState(
     ''
   )
-//  const handleAlignmentPlusChange = e => {
-//     setAligmentPlusRadio(e.target.value)
-//   } 
+  const handlePositionGroupSelectChange = e => { 
+    setPositionGroupSelect(e.target.value)
+  }
+  const [playerSelect, setPlayerSelect]=useState(
+    ''
+  )
+  const handlePlayerSelectChange = e => { 
+    setPlayerSelect(e.target.value)
+  }
+
+  const [plusMinus, setPlusMinus]=useState(
+    ''
+  )
+  const handlePlusMinusChange = e => { 
+    setPlusMinus(e.target.value)
+  }
+
+  const [alignmentGrade, setAlignmentGrade]=useState(
+    ''
+  )
+  const handleAlignmentGradeChange = e => { 
+    setAlignmentGrade(e.target.value)
+  }
+
+  const [assignmentGrade, setAssignmentGrade]=useState(
+    ''
+  )
+  const handleAssignmentGradeChange = e => { 
+    setAssignmentGrade(e.target.value)
+  }
+
+  const [finishGrade, setFinishGrade]=useState(
+    ''
+  )
+  const handleFinishGradeChange = e => { 
+    setFinishGrade(e.target.value)
+  }
 
   const handlePBUOnChange = e => {
     PBU(e.target.valeue)
   }
+  
   return ( 
     <>
       <GameSelect
@@ -37,15 +75,46 @@ function Scorecard () {
       handleGameSelectChange={handleGameSelectChange}
       />
   
-    <HudlPlay
-    hudlPlay={hudlPlay}
-    handleHudlPlayChange={handleHudlPlayChange}
-    />
+      <HudlPlay
+      hudlPlay={hudlPlay}
+      handleHudlPlayChange={handleHudlPlayChange}
+      />
 
-        <PBU 
-    PBU={PBU}
-    handlePBUOnChange={handlePBUOnChange}
-    />
+      <PositionGroupSelect
+      positionGroupSelect={positionGroupSelect}
+      handlePositionGroupSelectChange={handlePositionGroupSelectChange}
+      />
+
+      <PlayerSelect
+      playerSelect={playerSelect}
+      handlePlayerSelectChange={handlePlayerSelectChange}
+      />
+
+      <PlusMinus
+      plusMinus={plusMinus}
+      handlePlusMinusChange={handlePlusMinusChange}
+      />
+
+      <AlignmentGrade
+      alignmentGrade={alignmentGrade}
+      handleAlignmentGradeChange={handleAlignmentGradeChange}
+      />
+
+      <AssignmentGrade
+      assignmentGrade={assignmentGrade}
+      handleAssignmentGradeChange={handleAssignmentGradeChange}
+      />
+
+      <FinishGrade
+      finishGrade={finishGrade}
+      handleFinishGradeChange={handleFinishGradeChange}
+      />
+
+      <PBU 
+      PBU={PBU}
+      handlePBUOnChange={handlePBUOnChange}
+      />
+    
     </>
   ) 
          

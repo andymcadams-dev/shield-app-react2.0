@@ -22,7 +22,7 @@ class Header extends Component {
           <Container>
             <Row>
               <Col xs={4}>
-                <img src="/assets/plu-logo.png" height="150" width="300"/>
+                <img src="/assets/plu-logo.png" alt="logo" height="150" width="300"/>
               </Col>
               <Col xs={4}>
                 <h1>S.H.I.E.L.D.S</h1>

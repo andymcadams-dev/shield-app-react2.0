@@ -5,9 +5,10 @@ import { Container, Col, Row, List, ListGroupItemHeading } from 'reactstrap';
 function Footer(props) {
     return (
         <React.Fragment>
-            <Container>
+            <footer className="site-footer">
                 <Row>
                     <Col>
+                      
                         <ListGroupItemHeading>Links</ListGroupItemHeading>
                         <List>
                             <li><Link to="/home">Home</Link></li>
@@ -17,7 +18,7 @@ function Footer(props) {
                         </List>
                     </Col>
                     <Col>
-                        <img src="/assets/bighighfiverbb.png" width="90" height="90" />
+                        <img src="/assets/bighighfiverbb.png" alt="bighighfive" width="90" height="90" />
                     </Col>
                     <Col>
                         <h5>Social</h5>
@@ -27,7 +28,9 @@ function Footer(props) {
                         <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a>{' '} 
                     </Col>
                 </Row>
-            </Container>
+                
+            
+            </footer>
         </React.Fragment> 
     );
 }
