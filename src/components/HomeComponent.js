@@ -1,23 +1,13 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import Directory from './DirectoryComponent';
 
-function RenderCard({item}) {
-    return (
-        <Card>
-            <CardImg src={item.image} alt={item.school} width="240" height="360"/>
-            <CardBody>
-                <CardTitle>{item.school}</CardTitle>
-                <CardText>{item.date}</CardText>
-            </CardBody>
-        </Card>
-    )
-}
 function Home(props) {
     return (
         <div className="container">
             <div className="row">
                 <div className="col-md m-1">
-                    <RenderCard item={props.game} />
+                    <img src="/assets/plu-logo.png"
+                    height="500" width="1200" alt="PLU Logo" /> 
                 </div>
             </div>
         </div>

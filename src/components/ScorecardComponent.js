@@ -98,7 +98,7 @@ function Scorecard () {
     <>
       <Container>
         <Row>
-          <Col>
+          <Col className="scorecardrow">
             <GameSelect
             gameSelect={gameSelect}
             handleGameSelectChange={handleGameSelectChange}

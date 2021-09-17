@@ -31,7 +31,7 @@ h2 {
 
 .site-footer {
   background-color: (grey);
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .jumbotron {
@@ -49,9 +49,12 @@ h2 {
   background-color:goldenrod;
 }
 
-.a {
-  color:black
-}
 .site-footer {
   background-color: grey;
+}
+
+.row {
+  border: solid;
+  margin: 20px;
+  padding: 10px;
 }
