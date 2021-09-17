@@ -9,6 +9,11 @@ import AssignmentGrade from './AAFComponents/AssignmentComponent';
 import FinishGrade from './AAFComponents/FinishComponent';
 import ForcedFumble from './StatComponents/ForcedFumbleComponent';
 import PBU from './StatComponents/PassBreakUpComponent';
+import FumbleRecovery from './StatComponents/FumbleRecoveryComponent';
+import Interception from './StatComponents/InterceptionComponent';
+import Sack from './StatComponents/SackComponent';
+import Tackle from './StatComponents/TackleComponents';
+import { Container, Row, Col } from 'reactstrap';
 
 function Scorecard () {
   const [gameSelect, setGameSelect]=useState(
@@ -72,58 +77,119 @@ function Scorecard () {
   const handlePBUOnChange = e => {
     PBU(e.target.valeue)
   }
+
+  const handleFumbleRecoveryOnChange = e => {
+    FumbleRecovery(e.target.valeue)
+  }
+
+  const handleInterceptionOnChange = e => {
+    Interception(e.target.valeue)
+  }
+
+  const handleSackOnChange = e => {
+    Sack(e.target.valeue)
+  }
+
+  const handleTackleOnChange = e => {
+    Tackle(e.target.valeue)
+  }
   
   return ( 
     <>
-      <GameSelect
-      gameSelect={gameSelect}
-      handleGameSelectChange={handleGameSelectChange}
-      />
-  
-      <HudlPlay
-      hudlPlay={hudlPlay}
-      handleHudlPlayChange={handleHudlPlayChange}
-      />
-
-      <PositionGroupSelect
-      positionGroupSelect={positionGroupSelect}
-      handlePositionGroupSelectChange={handlePositionGroupSelectChange}
-      />
-
-      <PlayerSelect
-      playerSelect={playerSelect}
-      handlePlayerSelectChange={handlePlayerSelectChange}
-      />
-
-      <PlusMinus
-      plusMinus={plusMinus}
-      handlePlusMinusChange={handlePlusMinusChange}
-      />
-
-      <AlignmentGrade
-      alignmentGrade={alignmentGrade}
-      handleAlignmentGradeChange={handleAlignmentGradeChange}
-      />
-
-      <AssignmentGrade
-      assignmentGrade={assignmentGrade}
-      handleAssignmentGradeChange={handleAssignmentGradeChange}
-      />
-
-      <FinishGrade
-      finishGrade={finishGrade}
-      handleFinishGradeChange={handleFinishGradeChange}
-      />
-
-      <ForcedFumble 
-      ForcedFumble={ForcedFumble}
-      handleForcedFumbleOnChange={handleForcedFumbleOnChange}
-      />
-
-      <PBU 
-      PBU={PBU}
-      handlePBUOnChange={handlePBUOnChange}
-      />
+      <Container>
+        <Row>
+          <Col>
+            <GameSelect
+            gameSelect={gameSelect}
+            handleGameSelectChange={handleGameSelectChange}
+            />
+          </Col>
+          <Col>  
+            <HudlPlay
+            hudlPlay={hudlPlay}
+            handleHudlPlayChange={handleHudlPlayChange}
+            />
+          </Col>
+          <Col>
+            <PlusMinus
+            plusMinus={plusMinus}
+            handlePlusMinusChange={handlePlusMinusChange}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <PositionGroupSelect
+            positionGroupSelect={positionGroupSelect}
+            handlePositionGroupSelectChange={handlePositionGroupSelectChange}
+            />
+          </Col>
+          <Col>
+            <PlayerSelect
+            playerSelect={playerSelect}
+            handlePlayerSelectChange={handlePlayerSelectChange}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <AlignmentGrade
+            alignmentGrade={alignmentGrade}
+            handleAlignmentGradeChange={handleAlignmentGradeChange}
+            />
+          </Col>
+          <Col>
+            <AssignmentGrade
+            assignmentGrade={assignmentGrade}
+            handleAssignmentGradeChange={handleAssignmentGradeChange}
+            />
+          </Col>
+          <Col>
+            <FinishGrade
+            finishGrade={finishGrade}
+            handleFinishGradeChange={handleFinishGradeChange}
+            />
+          </Col>
+        </Row>
+        <Row> 
+          <Col>
+            <ForcedFumble 
+            ForcedFumble={ForcedFumble}
+            handleForcedFumbleOnChange={handleForcedFumbleOnChange}
+            />
+          </Col>
+          <Col>
+            <PBU 
+            PBU={PBU}
+            handlePBUOnChange={handlePBUOnChange}
+            />
+          </Col>
+          <Col>
+            <FumbleRecovery 
+            FumbleRecovery={FumbleRecovery}
+            handleFumbleRecoveryOnChange={handleFumbleRecoveryOnChange}
+            />
+          </Col>
+          <Col>
+            <Interception 
+            Interception={Interception}
+            handleInterceptionOnChange={handleInterceptionOnChange}
+            />
+          </Col>
+          <Col>
+            <Sack 
+            Sack={Sack}
+            handleSackOnChange={handleSackOnChange}
+            />
+          </Col>
+          <Col>
+            <Tackle 
+            Tackle={Tackle}
+            handleTackleOnChange={handleTackleOnChange}
+            />
+          </Col>
+        </Row>
+      </Container>
     
     </>
   ) 

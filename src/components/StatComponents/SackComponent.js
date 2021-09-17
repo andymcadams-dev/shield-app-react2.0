@@ -1,31 +1,24 @@
-import React,{Component} from 'react';
-import PBU from './PassBreakUpComponent';
+import { useState } from "react";
 
-class Sack extends Component {
-    state = {
-      sack:""
-    };
+export default function Sack() {
+const [isChecked, setIsChecked] = useState(false);
 
-    handleSackChange=(e)=>{
-        this.setState({
-          sack: e.target.value
-        })
-    }
+const handleSackOnChange = () => {
+  setIsChecked(!isChecked);
+};
 
-  render() {
-    return (
-      <div>
-         <form>
-            <input type="radio" value="half" id="half"
-              onChange={this.handleSackChange} name="sack" />
-            <label for="half">Half Sack</label>
-
-            <input type="radio" value="whole" id="whole"
-              onChange={this.handleSackChange} name="sack"/>
-            <label for="whole">Whole Sack</label>
-         </form>
-      </div>
-    );
-  }
-}
-export default PBU;
+return (
+  <div className="Sackdiv">
+      <div className="Sack">
+        <input
+          type="checkbox"
+          id="sack"
+          name="sack"
+          value="Sack"
+          checked={isChecked}
+          onChange={handleSackOnChange}
+        />
+        Sack
+    </div>
+  </div>
+)}
