@@ -7,6 +7,7 @@ h2,
 h3,
 .card-body > .card-title {
   font-family: "Copperplate", fantasy;
+  text-align: center;
 }
 
 .card-title {
@@ -53,8 +54,11 @@ h2 {
   background-color: grey;
 }
 
-.row {
+.scorecard {
   border: solid;
   margin: 20px;
   padding: 10px;
+}
+.scorecardtitle {
+  text-align: center;
 }
