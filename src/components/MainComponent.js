@@ -38,6 +38,7 @@ class Main extends Component {
                         <Route exact path= '/directory' render={() => <Directory games={this.state.games} />} />
                         <Route path='/Scorecard' component={Scorecard} />
                     </Switch>
+                    
                 <Footer />
             </div>
         );

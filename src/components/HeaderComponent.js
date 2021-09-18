@@ -38,19 +38,19 @@ class Header extends Component {
     return (
       <React.Fragment>
         <Jumbotron fluid>
-          <Container>
+          
             <Row>
             <Col xs={4}>
                 <h1>S.H.I.E.L.D.</h1>
               </Col>
               <Col xs={4}>
-                <img src="/assets/plu-logo.png" alt="logo" height="150" width="300"/>
+                <img src="/assets/plu-logo.png" alt="logo" height="100%" width="100%"/>
               </Col>
               <Col xs={4}>
                 <h2>Defend Stronger</h2>
               </Col>
             </Row>
-          </Container>
+          
         </Jumbotron>
           <Navbar dark sticky="top" expand="md">
               <div className="container">
