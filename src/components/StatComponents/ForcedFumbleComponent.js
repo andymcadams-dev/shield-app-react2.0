@@ -1,10 +1,9 @@
 import { useState } from "react";
 
 export default function ForcedFumble() {
-const [isChecked, setIsChecked] = useState(false);
-
-const handleForcedFumbleOnChange = () => {
-  setIsChecked(!isChecked);
+const [isForcedFumbleChecked, setIsForcedFumbleChecked] = useState(false);
+const handleForcedFumbleChange = () => {
+  setIsForcedFumbleChecked(!isForcedFumbleChecked);
 };
 
 return (
@@ -15,10 +14,10 @@ return (
           id="forcedfumble"
           name="forcedfumble"
           value="ForcedFumble"
-          checked={isChecked}
-          onChange={handleForcedFumbleOnChange}
+          checked={isForcedFumbleChecked}
+          onChange={handleForcedFumbleChange}
         />
-        Forced Fumble
+        
     </div>
   </div>
 )}

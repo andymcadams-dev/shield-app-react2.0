@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, 
-  NavItem, Jumbotron, Container, Col, Row, Button, Modal, ModalHeader,
+  NavItem, Jumbotron, Col, Row, Button, Modal, ModalHeader,
 ModalBody, Label, Input, FormGroup, Form } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 

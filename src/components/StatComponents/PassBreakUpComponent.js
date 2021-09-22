@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function PBU() {
-const [isChecked, setIsChecked] = useState(false);
+const [isChecked, setIsPBUChecked] = useState(false);
 
-const handlePBUOnChange = () => {
-  setIsChecked(!isChecked);
+const handlePBUChange = () => {
+  setIsPBUChecked(!isChecked);
 };
 
 return (
@@ -16,9 +16,9 @@ return (
           name="pbu"
           value="PBU"
           checked={isChecked}
-          onChange={handlePBUOnChange}
+          onChange={handlePBUChange}
         />
-        PBU
+        
     </div>
   </div>
 )}

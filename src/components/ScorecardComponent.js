@@ -16,11 +16,11 @@ import Tackle from './StatComponents/TackleComponents';
 import { Container, Row, Col } from 'reactstrap';
 
 function Scorecard () {
-  const [gameSelect, setGameSelect]=useState(
-    ''
+  const [gameSelect, setGameSelect]=useState(//defining gameSelect [declaring state]
+    ''      //I am a thing, Here is how to change me, here is what I start as
   )
-  const handleGameSelectChange = e => { 
-    setGameSelect(e.target.value)
+  const handleGameSelectChange = e => { //using setGameSelect [declaring setstate] this sets everytime there is a change on the element.
+    setGameSelect(e.target.value) //there is where you use the changing it
   }
   const [hudlPlay, setHudlPlay]=useState(
     ''
@@ -70,42 +70,42 @@ function Scorecard () {
     setFinishGrade(e.target.value)
   }
 
-  const handleForcedFumbleOnChange = e => {
-    ForcedFumble(e.target.valeue)
+  const handleForcedFumbleChange = e => {
+    ForcedFumble(e.target.checked)//spelling and need to setForcedFumble
   }
 
-  const handlePBUOnChange = e => {
-    PBU(e.target.valeue)
+  const handlePBUChange = e => {
+    PBU(e.target.checked)
   }
 
-  const handleFumbleRecoveryOnChange = e => {
-    FumbleRecovery(e.target.valeue)
+  const handleFumbleRecoveryChange = e => {
+    FumbleRecovery(e.target.checked)
   }
 
-  const handleInterceptionOnChange = e => {
-    Interception(e.target.valeue)
+  const handleInterceptionChange = e => {
+    Interception(e.target.checked)
   }
 
-  const handleSackOnChange = e => {
-    Sack(e.target.valeue)
+  const handleSackChange = e => {
+    Sack(e.target.value) //these should all be setSack or setTackle
   }
 
-  const handleTackleOnChange = e => {
-    Tackle(e.target.valeue)
+  const handleTackleChange = e => {
+    Tackle(e.target.checked)
   }
   
   return ( 
     <>
       <Container>
-      <Row>
-        <h1 className="scorecardtitle">Player Gradesheet</h1>
-      </Row>
+        <Row>
+          <h1 className="scorecardtitle">Player Gradesheet</h1>
+        </Row>
         <Row className="scorecard">
-          <Col >
-          <h2>Game</h2>
+          <Col>
+          <h2>Game </h2>
             <GameSelect
-            gameSelect={gameSelect}
-            handleGameSelectChange={handleGameSelectChange}
+            gameSelect={gameSelect} //this is being passed into component as a prop =on the right of equal is {current state}
+            handleGameSelectChange={handleGameSelectChange}//so is this  =on the right of equals is {function for changing current state}
             />
           </Col>
           <Col> 
@@ -122,7 +122,7 @@ function Scorecard () {
             handlePlusMinusChange={handlePlusMinusChange}
             />
           </Col>
-        </Row>
+          </Row>
         <Row className="scorecard">
           <Col>
           <h2>Position Group</h2>
@@ -167,53 +167,48 @@ function Scorecard () {
           <h2>For Fum</h2>
             <ForcedFumble 
             ForcedFumble={ForcedFumble}
-            handleForcedFumbleOnChange={handleForcedFumbleOnChange}
+            handleForcedFumbleChange={handleForcedFumbleChange}
             />
           </Col>
           <Col>
           <h2>PBU</h2>
             <PBU 
             PBU={PBU}
-            handlePBUOnChange={handlePBUOnChange}
+            handlePBUChange={handlePBUChange}
             />
           </Col>
           <Col>
           <h2>Fum Rec</h2>
             <FumbleRecovery 
             FumbleRecovery={FumbleRecovery}
-            handleFumbleRecoveryOnChange={handleFumbleRecoveryOnChange}
+            handleFumbleRecoveryChange={handleFumbleRecoveryChange}
             />
           </Col>
           <Col>
           <h2>INT</h2>
             <Interception 
             Interception={Interception}
-            handleInterceptionOnChange={handleInterceptionOnChange}
+            handleInterceptionChange={handleInterceptionChange}
             />
           </Col>
           <Col>
           <h2>Sack</h2>
             <Sack 
             Sack={Sack}
-            handleSackOnChange={handleSackOnChange}
+            handleSackChange={handleSackChange}
             />
           </Col>
           <Col>
           <h2>Tackle</h2>
             <Tackle 
             Tackle={Tackle}
-            handleTackleOnChange={handleTackleOnChange}
+            handleTackleChange={handleTackleChange}
             />
           </Col>
         </Row>
       </Container>
-    
     </>
   ) 
-         
-    
-        
 }
-
 
 export default Scorecard;

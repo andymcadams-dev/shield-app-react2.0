@@ -5,7 +5,7 @@ function PlayerSelect ({playerSelect, handlePlayerSelectChange}) {
   
   return (
     <div>
-      <label>Player Select</label>
+      <label></label>
       <input type="text" value={playerSelect} onChange={handlePlayerSelectChange} />
     </div>
   )

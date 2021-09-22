@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react';
 
+class Alignment extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'Select Grade'};
+    this.handleAlignmentChange = this.handleAlignmentChange.bind(this);
+    
+  }
 
-function AlignmentGrade ({alignmentGrade, handleAlignmentGradeChange}) {
-  
-  return (
-    <div>
-      <label>Alignment Grade</label>
-      <input type="text" value={alignmentGrade} onChange={handleAlignmentGradeChange} />
-    </div>
-  )
+  handleAlignmentChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+ 
+
+  render() {
+    return (
+      <form >
+        <label>
+          <select value={this.state.value} onChange={this.handleAlignmentChange}>
+            <option value="Alignment Grade">Select Grade</option>
+            <option value="Alignment Plus">Plus Grade</option>
+            <option value="Alignment Minus">Minus Grade</option>
+          </select>
+        </label>
+      </form>
+    );
+  }
 }
 
-  
-export default AlignmentGrade;
+export default Alignment;

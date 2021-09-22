@@ -1,24 +1,40 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
 export default function Sack() {
-const [isChecked, setIsChecked] = useState(false);
+    const [isSackSelected, setIsSackSelected] = useState(false);
+    const [sackYards, setSackYards] = useState('Enter Yards Here');
+    const handleSackChange = () => {
+      setIsSackSelected(!isSackSelected);
+    };
+    
+    const handleSackYardsChange = e => {
+      setSackYards(e.target.value)
+    }
 
-const handleSackOnChange = () => {
-  setIsChecked(!isChecked);
-};
+    return (
+      <div className="container">
+        <div className="sack select">
+          <form >
+            <label>
+              <select value={this.state.value} onChange={this.handleSackChange}>
+                <option value="Select Sack">Select Sack</option>
+                <option value="Half Sack">Half Sack</option>
+                <option value="Whole Sack">Whole Sack</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        {isSackSelected !== "Select Sack" &&  <div className="SackYards"> 
+          <input
+            type="text"
+            id="SackYards"
+            name="SackYards"
+            value={sackYards}
+            onChange={handleSackYardsChange}
+            />
+        </div>}
+      </div>
+    );
+  }
 
-return (
-  <div className="Sackdiv">
-      <div className="Sack">
-        <input
-          type="checkbox"
-          id="sack"
-          name="sack"
-          value="Sack"
-          checked={isChecked}
-          onChange={handleSackOnChange}
-        />
-        Sack
-    </div>
-  </div>
-)}
+

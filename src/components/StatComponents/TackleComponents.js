@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function Tackle() {
-const [isChecked, setIsChecked] = useState(false);
+const [isTackleChecked, setIsTackleChecked] = useState(false);
 
-const handleTackleOnChange = () => {
-  setIsChecked(!isChecked);
+const handleTackleChange = () => {
+  setIsTackleChecked(!isTackleChecked);
 };
 
 return (
@@ -15,10 +15,9 @@ return (
           id="tackle"
           name="tackle"
           value="Tackle"
-          checked={isChecked}
-          onChange={handleTackleOnChange}
+          checked={isTackleChecked}
+          onChange={handleTackleChange}
         />
-        Tackle
     </div>
   </div>
 )}

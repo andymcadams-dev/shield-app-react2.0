@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 export default function FumbleRecovery() {
-const [isChecked, setIsChecked] = useState(false);
-
+const [isFumRecChecked, setIsFumRecChecked] = useState(false);
+const [fumbleYards, setFumbleYards] = useState('Enter Yards Here');
 const handleFumbleRecoveryOnChange = () => {
-  setIsChecked(!isChecked);
+  setIsFumRecChecked(!isFumRecChecked);
 };
+const handleFumbleYardsChange = e => {
+  setFumbleYards(e.target.value)
+}
 
 return (
   <div className="FumbleRecoverydiv">
@@ -15,10 +18,20 @@ return (
           id="fumbleRecovery"
           name="fumbleRecovery"
           value="FumbleRecovery"
-          checked={isChecked}
+          checked={isFumRecChecked}
           onChange={handleFumbleRecoveryOnChange}
         />
-        Fumble Recovery
+        
     </div>
+    {isFumRecChecked &&  <div className="FumbleYards"> 
+      <input
+        type="text"
+        id="FumbleYards"
+        name="FumbleYards"
+        value={fumbleYards}
+        onChange={handleFumbleYardsChange}
+        />
+      
+    </div>}
   </div>
 )}
