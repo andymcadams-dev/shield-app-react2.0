@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, value } from 'react';
 
 export default function Sack() {
     const [isSackSelected, setIsSackSelected] = useState(false);
     const [sackYards, setSackYards] = useState('Enter Yards Here');
     const handleSackChange = () => {
-      setIsSackSelected(isSackSelected);
+      setIsSackSelected(value!=="Select Sack");
     };
     
     const handleSackYardsChange = e => {
@@ -24,7 +24,7 @@ export default function Sack() {
             </label>
           </form>
         </div>
-        {`value!== "Select Sack"`  &&  <div className="SackYards"> 
+        {isSackSelected  &&  <div className="SackYards"> 
           <input
             type="text"
             id="SackYards"

@@ -14,6 +14,7 @@ import Interception from './StatComponents/InterceptionComponent';
 import Sack from './StatComponents/SackComponent';
 import Tackle from './StatComponents/TackleComponents';
 import { Container, Row, Col } from 'reactstrap';
+import TackleForLoss from './StatComponents/TackleForLossComponent';
 
 function Scorecard () {
   const [gameSelect, setGameSelect]=useState(//defining gameSelect [declaring state]
@@ -93,6 +94,10 @@ function Scorecard () {
   const handleTackleChange = e => {
     Tackle(e.target.checked)
   }
+
+  const handleTackleForLossChange = e => {
+    TackleForLoss(e.target.checked)
+  }
   
   return ( 
     <>
@@ -164,17 +169,17 @@ function Scorecard () {
         </Row>
         <Row className="scorecard"> 
           <Col>
-          <h2>For Fum</h2>
-            <ForcedFumble 
-            ForcedFumble={ForcedFumble}
-            handleForcedFumbleChange={handleForcedFumbleChange}
-            />
-          </Col>
-          <Col>
           <h2>PBU</h2>
             <PBU 
             PBU={PBU}
             handlePBUChange={handlePBUChange}
+            />
+          </Col>
+          <Col>
+          <h2>For Fum</h2>
+            <ForcedFumble 
+            ForcedFumble={ForcedFumble}
+            handleForcedFumbleChange={handleForcedFumbleChange}
             />
           </Col>
           <Col>
@@ -203,6 +208,13 @@ function Scorecard () {
             <Tackle 
             Tackle={Tackle}
             handleTackleChange={handleTackleChange}
+            />
+          </Col>
+          <Col>
+          <h2>TFL</h2>
+            <TackleForLoss 
+            TackleForLoss={TackleForLoss}
+            handleTackleForLossChange={handleTackleForLossChange}
             />
           </Col>
         </Row>

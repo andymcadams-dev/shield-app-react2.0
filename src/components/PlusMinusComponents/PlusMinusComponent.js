@@ -5,7 +5,7 @@ function PlusMinus ({plusMinus, handlePlusMinusChange}) {
   
   return (
     <div>
-      <label>Play Grade</label>
+      <label></label>
       <input type="text" value={plusMinus} onChange={handlePlusMinusChange} />
     </div>
   )
