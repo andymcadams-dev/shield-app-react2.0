@@ -73,4 +73,7 @@ h2 {
   border: solid;
 }
 
-
+.titlecol {
+  border: solid;
+  border-color: goldenrod;
+}

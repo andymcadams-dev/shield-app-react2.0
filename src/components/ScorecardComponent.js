@@ -13,7 +13,7 @@ import FumbleRecovery from './StatComponents/FumbleRecoveryComponent';
 import Interception from './StatComponents/InterceptionComponent';
 import Sack from './StatComponents/SackComponent';
 import Tackle from './StatComponents/TackleComponents';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import TackleForLoss from './StatComponents/TackleForLossComponent';
 
 function Scorecard () {
@@ -121,26 +121,27 @@ function Scorecard () {
             />
           </Col>
           <Col>
-          <h2>Grade</h2>
-            <PlusMinus
-            plusMinus={plusMinus}
-            handlePlusMinusChange={handlePlusMinusChange}
-            />
-          </Col>
-          </Row>
-        <Row className="scorecard">
-          <Col>
           <h2>Position Group</h2>
             <PositionGroupSelect
             positionGroupSelect={positionGroupSelect}
             handlePositionGroupSelectChange={handlePositionGroupSelectChange}
             />
           </Col>
+          </Row>
+        <Row className="scorecard">
+          
           <Col>
           <h2>Player</h2>
             <PlayerSelect
             playerSelect={playerSelect}
             handlePlayerSelectChange={handlePlayerSelectChange}
+            />
+          </Col>
+          <Col>
+          <h2>Grade</h2>
+            <PlusMinus
+            plusMinus={plusMinus}
+            handlePlusMinusChange={handlePlusMinusChange}
             />
           </Col>
         </Row>
@@ -216,6 +217,13 @@ function Scorecard () {
             TackleForLoss={TackleForLoss}
             handleTackleForLossChange={handleTackleForLossChange}
             />
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col>
+          <Button variant="warning">Submit</Button>{''}
           </Col>
         </Row>
       </Container>

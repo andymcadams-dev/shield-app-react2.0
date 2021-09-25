@@ -5,7 +5,7 @@ function Home(props) {
     return (
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col titlecol">
               <h1>S.H.I.E.L.D.</h1>
               <h4 className="mainh4">The ability to grade game film from anywhere</h4>
             </div>
