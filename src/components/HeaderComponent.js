@@ -41,7 +41,7 @@ class Header extends Component {
           
             <Row>
             <Col xs={4}>
-                <h1>Brant has stinky feet</h1>
+                <h1>S.H.I.E.L.D.</h1>
               </Col>
               <Col xs={4}>
                 <img src="/assets/plu-logo.png" alt="logo" height="100%" width="100%"/>
