@@ -4,7 +4,7 @@ export default function Sack() {
     const [isSackSelected, setIsSackSelected] = useState(false);
     const [sackYards, setSackYards] = useState('Enter Yards Here');
     const handleSackChange = () => {
-      setIsSackSelected(!isSackSelected);
+      setIsSackSelected(isSackSelected);
     };
     
     const handleSackYardsChange = e => {
@@ -16,7 +16,7 @@ export default function Sack() {
         <div className="sack select">
           <form >
             <label>
-              <select value={this.state.value} onChange={this.handleSackChange}>
+              <select onChange={handleSackChange}>
                 <option value="Select Sack">Select Sack</option>
                 <option value="Half Sack">Half Sack</option>
                 <option value="Whole Sack">Whole Sack</option>
@@ -24,7 +24,7 @@ export default function Sack() {
             </label>
           </form>
         </div>
-        {isSackSelected !== "Select Sack" &&  <div className="SackYards"> 
+        {`value!== "Select Sack"`  &&  <div className="SackYards"> 
           <input
             type="text"
             id="SackYards"
