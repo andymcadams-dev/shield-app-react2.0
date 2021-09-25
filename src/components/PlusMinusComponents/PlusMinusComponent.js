@@ -1,12 +1,14 @@
 import React from 'react'
 
 
-function PlusMinus ({plusMinus, handlePlusMinusChange}) {
+function PlusMinus ({plusMinus}) {
   
   return (
     <div>
       <label></label>
-      <input type="text" value={plusMinus} onChange={handlePlusMinusChange} />
+      <div>
+        {plusMinus}
+      </div>
     </div>
   )
 }

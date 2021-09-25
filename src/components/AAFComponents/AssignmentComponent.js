@@ -1,25 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Assignment extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Select Grade'};
-    this.handleAssignmentChange = this.handleAssignmentChange.bind(this);
-    
-  }
-
-  handleAssignmentChange(event) {
-    this.setState({value: event.target.value});
-  }
-
- 
-
-  render() {
+function Assignment({assignment, handleAssignmentChange}) {
     return (
       <form >
         <label>
-          <select value={this.state.value} onChange={this.handleAssignmentChange}>
-            <option value="Assignment Grade">Select Grade</option>
+          <select value={assignment} onChange={handleAssignmentChange}>
+            <option value=''>Select Grade</option>
             <option value="Assignment Plus">Plus Grade</option>
             <option value="Assignment Minus">Minus Grade</option>
           </select>
@@ -27,6 +13,6 @@ class Assignment extends Component {
       </form>
     );
   }
-}
+
 
 export default Assignment;

@@ -1,25 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Finish extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Select Grade'};
-    this.handleFinishChange = this.handleFinishChange.bind(this);
-    
-  }
-
-  handleFinishChange(event) {
-    this.setState({value: event.target.value});
-  }
-
- 
-
-  render() {
+function Finish({finish, handleFinishChange}) {
     return (
       <form >
         <label>
-          <select value={this.state.value} onChange={this.handleFinishChange}>
-            <option value="Finish Grade">Select Grade</option>
+          <select value={finish} onChange={handleFinishChange}>
+            <option value=''>Select Grade</option>
             <option value="Finish Plus">Plus Grade</option>
             <option value="Finish Minus">Minus Grade</option>
           </select>
@@ -27,6 +13,6 @@ class Finish extends Component {
       </form>
     );
   }
-}
+
 
 export default Finish;

@@ -4,9 +4,9 @@ import GameSelect from './HudlPlayComponents/GameSelectComponent';
 import PlayerSelect from './PlayerComponents/PlayerComponent';
 import PositionGroupSelect from './PlayerComponents/PositionGroupComponent';
 import PlusMinus from './PlusMinusComponents/PlusMinusComponent';
-import AlignmentGrade from './AAFComponents/AlignmentComponents';
-import AssignmentGrade from './AAFComponents/AssignmentComponent';
-import FinishGrade from './AAFComponents/FinishComponent';
+import Alignment from './AAFComponents/AlignmentComponents';
+import Assignment from './AAFComponents/AssignmentComponent';
+import Finish from './AAFComponents/FinishComponent';
 import ForcedFumble from './StatComponents/ForcedFumbleComponent';
 import PBU from './StatComponents/PassBreakUpComponent';
 import FumbleRecovery from './StatComponents/FumbleRecoveryComponent';
@@ -43,32 +43,24 @@ function Scorecard () {
     setPlayerSelect(e.target.value)
   }
 
-  const [plusMinus, setPlusMinus]=useState(
-    ''
-  )
-  const handlePlusMinusChange = e => { 
-    setPlusMinus(e.target.value)
+  const [ alignment, setAlignment ] = useState('')     
+  
+  const handleAlignmentChange = e => {
+      setAlignment(e.target.value);
   }
 
-  const [alignmentGrade, setAlignmentGrade]=useState(
+  const [ assignment, setAssignment ]=useState(
     ''
   )
-  const handleAlignmentGradeChange = e => { 
-    setAlignmentGrade(e.target.value)
+  const handleAssignmentChange = e => { 
+    setAssignment(e.target.value)
   }
 
-  const [assignmentGrade, setAssignmentGrade]=useState(
+  const [finish, setFinish]=useState(
     ''
   )
-  const handleAssignmentGradeChange = e => { 
-    setAssignmentGrade(e.target.value)
-  }
-
-  const [finishGrade, setFinishGrade]=useState(
-    ''
-  )
-  const handleFinishGradeChange = e => { 
-    setFinishGrade(e.target.value)
+  const handleFinishChange = e => { 
+    setFinish(e.target.value)
   }
 
   const handleForcedFumbleChange = e => {
@@ -139,32 +131,33 @@ function Scorecard () {
           </Col>
           <Col>
           <h2>Grade</h2>
-            <PlusMinus
-            plusMinus={plusMinus}
-            handlePlusMinusChange={handlePlusMinusChange}
+            <PlusMinus 
+            plusMinus={alignment === "Alignment Minus" || 
+                      assignment === "Assignment Minus" || 
+                      finish === "Finish Minus" ? "Minus" : "Plus"  }
             />
           </Col>
         </Row>
         <Row className="scorecard">
           <Col>
           <h2>Alignment</h2>
-            <AlignmentGrade
-            alignmentGrade={alignmentGrade}
-            handleAlignmentGradeChange={handleAlignmentGradeChange}
+            <Alignment
+            alignment={alignment}
+            handleAlignmentChange={handleAlignmentChange}
             />
           </Col>
           <Col>
           <h2>Assignment</h2>
-            <AssignmentGrade
-            assignmentGrade={assignmentGrade}
-            handleAssignmentGradeChange={handleAssignmentGradeChange}
+            <Assignment
+            assignment={assignment}
+            handleAssignmentChange={handleAssignmentChange}
             />
           </Col>
           <Col>
           <h2>Finish</h2>
-            <FinishGrade
-            finishGrade={finishGrade}
-            handleFinishGradeChange={handleFinishGradeChange}
+            <Finish
+            finish={finish}
+            handleFinishChange={handleFinishChange}
             />
           </Col>
         </Row>
